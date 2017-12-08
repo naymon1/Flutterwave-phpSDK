@@ -17,7 +17,8 @@
             <input type="hidden" name="ref" value="7737dbdbegegeh737" /> <!-- Replace the value the payment button text your transaction reference. It must be unique per transaction. You can delete this line if you want one to be generated for you. -->
             <input type="submit" value="Submit" style="display:none;" />
         </form>
-        <script type="text/javascript" >
+       
+       <script type="text/javascript" >
             document.addEventListener("DOMContentLoaded", function(event) {
                 document.getElementById("paymentForm").submit();
             });

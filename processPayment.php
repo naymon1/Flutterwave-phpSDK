@@ -11,17 +11,17 @@ use Flutterwave\Rave\EventHandlerInterface;
 $URL = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://'.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
 $getData = $_GET;
 $postData = $_POST;
-$publicKey = '****YOUR**PUBLIC**KEY****'; // Remember to change this to your live public keys when going live
-$secretKey = '****YOUR**SECRET**KEY****'; // Remember to change this to your live secret keys when going live
+$publicKey = 'FLWPUBK-d6a9deb48089edf7952183256f7731b5-X'; // Remember to change this to your live public keys when going live
+$secretKey = 'FLWSECK-afaf48e81173c2881919c1f6297d82c3-X'; // Remember to change this to your live secret keys when going live
 $env = 'staging'; // Remember to change this to 'live' when you are going live
 $prefix = 'MY_NAME'; // Change this to the name of your business
 $overrideRef = false;
 
 // Uncomment here to enforce the useage of your own ref.
-// if($postData['ref']){
-//     $prefix = $postData['ref'];
-//     $overrideRef = true;
-// }
+ if($postData['ref']){
+     $prefix = $postData['ref'];
+     $overrideRef = true;
+ }
 
 $payment = new Rave($publicKey, $secretKey, $prefix, $env, $overrideRef);
 
